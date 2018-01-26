@@ -9,6 +9,8 @@ r_packages:
   - rmarkdown
   - lintr
   - tidyverse
+  - swirl
   - testthat
+  - glue
 os:
   - linux
