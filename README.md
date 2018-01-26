@@ -1,4 +1,4 @@
-# Assignment
+# Intro to R (part 4)
 
 [![status](
   https://travis-ci.com/ORGANIZATION/REPOSITORY.svg?token=G1bSzEvMAupn3uUudqbz&branch=master
@@ -7,7 +7,7 @@
 )
 
  1. Complete the exercises in [`assignment.Rmd`](assignment.Rmd)
- 2. Make sure that the code in `assignment.Rmd` passes linting checks and renders/knits successfully to HTML
+ 2. Make sure that the code in `assignment.Rmd` passes linting checks and renders/knits successsfully to HTML
  3. Submit by creating a pull request with `submit` as the **base branch** and your instructor as the reviewer
 
 ## Setup
@@ -17,7 +17,7 @@
   - if you have an open project in your RStudio Server, close it by choosing **Close Project** from the **Project** dropdown button in the upper right corner (it should say `Project: (None)` afterwards)
   - at the top of this repository, click on the green **Clone or download** button and copy the shown link to the clipboard
   - in your R Server terminal (not the console), type `git clone ` and paste the copied link right after (so it says something to the effect `git clone https://github.com/......git`), then execute the command to creates a local copy of your GitHub repository (the new folder should show up in the files list on the right)
-4. Load project:
+3. Load project:
  - click the **Project** dropdown button again and choose **Open Project**
  - navigate to the new project folder and select the `project.Rproj` file inside it
  - this will load a new R session rooted in the new project folder (you will see this project now selected in the **Project** dropdown)
