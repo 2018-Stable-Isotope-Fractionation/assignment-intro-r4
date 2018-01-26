@@ -31,3 +31,6 @@
  - as soon as your instructor activates the automatic code checking and the first check completes (usually within a few hours), the code checking will run automatically after every single commit (typically within 2-5 minutes) and show you in red if there are problems (`build failing`) or in green if your code has run without any trouble (`build passing`)
  - if you want to see details about the status of the code check after a commit, you should be able to click on the status badge to get to Travis CI (click **Sign in with GitHub** and enter your GitHub credentials, you may have to sign out and back in if you access it for the first time on a new repository)
 
+## Resources
+
+ - [ggplot2 cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
