@@ -1,0 +1,307 @@
+---
+title: "R Intro (part 4)"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    df_print: paged
+    toc: yes
+    toc_float: true
+    toc_depth: 3
+    code_folding: show
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r "setup", echo=FALSE, message=FALSE, warning=FALSE}
+# load all the libraries
+library(tidyverse)
+library(swirl)
+library(testthat)
+```
+
+# 1. [Introduction to Data Visualization](http://r4ds.had.co.nz/data-visualisation.html#introduction-1)
+
+> Read the short introduction to data visualization (chapter 3.1) in the R for Data Science book and answer the following question.
+
+## 1.1 What does the `gg` in `ggplot` stand for?
+
+Answer: 
+
+# 2. [First Steps with ggplot](http://r4ds.had.co.nz/data-visualisation.html#first-steps)
+
+> Read the first steps with ggplot (chapter 3.2) in the R for Data Science book and answer the following questions.
+
+## 2.1 Make a simple scatterplot of `hwy` vs `drv` and store it in the variable `p2_1`. What does this plot tell you?
+
+Answer: 
+
+```{r}
+# store the plot in variable p2_1
+p2_1 <- 
+
+# render the plot by outputting the variable
+p2_1
+```
+
+
+# 3. Swirl course on ggplot2
+
+In the `swirl()` course menu, select **Exploratory Data Analysis**, complete the lesson **8: GGPlot2 Part2 ** (yes, part2, part1 is more about `qplot` which is not as powerful as `ggplot`). In part2, you can ignore the first question about `qplot` (the answer is `qplot(displ, hwy, data = mpg, geom = c("point", "smooth"), facets = .~drv)`). It is much more versatile to learn and use the full `ggplot` instead. Also one questions requests using a base plot function (which we have not covered and will omit in favor of ggplot) - the answer to this question is `plot(myx, myy, type = "l", ylim = c(-3,3))`. 
+
+```{r, eval=FALSE}
+install_course("Exploratory Data Analysis")
+swirl()
+```
+
+## 3.1 Now let's use the full power of ggplot to examine the `mpg` dataset
+
+> Reproduce the last plot generated in the swirl exercise. Remember that you'll first have to define the variable `g` in order to use it to build your plot (or build it completely from scratch without the `g` intermediate), and make sure to use proper space around infix operators (` = `, ` ~ `, etc.). Once again, store the final plot in a variable (`p3_1`).
+
+```{r, fig.width=10, fig.height=8}
+# store the plot in variable p3_1
+p3_1 <- 
+
+# render the plot by outputting the variable
+p3_1
+```
+
+# 4. [Aesthetic mapping](http://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings) and [data types](http://serialmentor.com/dataviz/visualizing-data-mapping-data-onto-aesthetics.html#aesthetics-and-types-of-data) in ggplot
+
+> Read the chapter on aesthetic mappings (chapter 3.3) in the R for Data Science book and the chapter on aesthetics and data types (chapter 1.1) in the the [Fundamental of Data Visualization](http://serialmentor.com/dataviz/) and answer the following questions adapted from R for Data Science.
+
+## 4.1 What’s gone wrong with this code? Why are the points not blue?
+
+Answer: 
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+```
+
+## 4.2 How can you correct this and make the points blue? Again, store the answer in the variable `p4_2`:
+
+```{r}
+# store the plot in variable p4_2 
+p4_2 <- 
+
+# render the plot by outputting the variable
+p4_2
+```
+
+
+## 4.3 Output the `mpg` dataset (simply run chunk below). Which variables in `mpg` are categorical? Which variables are continuous? How can you see this information from the `mpg` output? 
+
+> Hint: if you get stuck, type `?mpg` to read the documentation for the dataset
+
+Answer: 
+
+```{r}
+mpg
+```
+
+## 4.4 Make a plot (`p4_4`) of `hwy` vs. `displ` that maps a continuous variable to color and another continuous variable to size. How do these aesthetics behave differently for categorical vs. continuous variables? 
+
+Answer: 
+
+```{r}
+# store the plot in variable p4_4
+p4_4 <- 
+
+# render the plot by outputting the variable
+p4_4
+```
+
+## 4.5 What happens if you map a continuous variable to shape? Why does this make sense?
+
+Answer: 
+
+## 4.6 Make a plot (`p4_6`) of `hwy` vs. `displ` that maps the same categorical variable (e.g. `drv`) to both the `color` and `shape` aesthetic. What happens?
+
+Answer: 
+
+```{r}
+# store the plot in variable p4_6
+p4_6 <- 
+
+# render the plot by outputting the variable
+p4_6
+```
+
+
+## 4.7 Make a plot (`p4_7`) of `hwy` vs. `displ` that maps an aesthetic to something other than a variable name (e.g. `color = displ < 5`). What happens?
+
+Answer: 
+
+```{r}
+# store the plot in variable p4_7
+p4_7 <- 
+
+# render the plot by outputting the variable
+p4_7
+```
+
+# 5. [Facets in ggplot](http://r4ds.had.co.nz/data-visualisation.html#facets) 
+
+> Read the chapter on facets (chapter 3.5) in the R for Data Science book and answer the following questions adapted from the book.
+
+## 5.1 Make a plot (`p5_1`) of `hyw` vs. `displ` with a continuous variable used in facetting (e.g. `year ~ cty`). What happens?
+
+Answer: 
+
+```{r}
+# store the plot in variable p5_1
+p5_1 <- 
+
+# render the plot by outputting the variable
+p5_1
+```
+
+## 5.2 Make a scatterplot (`p5_2`) of `hwy` vs. `displ` with facets `facet_grid(drv ~ cyl)`. What do the empty cells mean? How do they relate to the plot generated by `ggplot(data = mpg) + geom_point(mapping = aes(x = drv, y = cyl))`?
+
+Answer: 
+
+```{r}
+# store the plot in variable p5_2
+p5_2 <- 
+
+# render the plot by outputting the variable
+p5_2
+```
+
+## 5.3 run the following two code chunks and describe what `.` does in facets.
+
+Answer: 
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+```
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+```
+
+## 5.4 Read `?facet_wrap` and store the plot that uses the `labeller` option from the Examples section in `p5_4` below. What does the `labeller` argument do? What happens if you add `ncol=4` as an additional argument to `facet_wrap`? Describe briefly how `facet_wrap` is different from `facet_grid`.
+
+Answer: 
+
+```{r}
+# store the plot in variable p5_4
+p5_4 <- 
+
+# render the plot by outputting the variable
+p5_4
+```
+
+# 6 [Geometric objects](http://r4ds.had.co.nz/data-visualisation.html#geometric-objects)
+
+> Read the chapter on geometric objects (chapter 3.6) in the R for Data Science book and answer the following questions adapted from the book.
+
+## 6.1 What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
+
+Answer:
+
+## 6.2 Run the following chunk in your head and predict what the output will look like. Then, run the code in R and check your predictions.
+
+```{r}
+p6_2 <- ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE, show.legend = FALSE) +
+  labs(x = "engine displacement [l]", 
+       y = "highway gas mileage [mpg]",
+       color = "drive type")
+
+p6_2
+```
+
+### 6.2.1 What does `show.legend = FALSE` do? What happens if you remove it?
+
+Answer: 
+
+### 6.2.2 What does the `geom_smooth()` argument do? 
+
+Answer: 
+
+### 6.2.3 What does the `labs()` function do? What happens if you remove it?
+
+Answer: 
+
+## 6.3 Will the graphs in the followign two chunks look different or the same? Why/why not?
+
+Answer: 
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+```{r}
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+```
+
+# 7. Code checks
+
+> The following are automated tests for Travis. Run the chunk to see if your code is complete and passes all the tests. The chunk will stop at the first test that does not pass. If you get an error, see if you can figure out what might be missing in your code (do not edit this chunk!). Once all tests run without errors, the file knits successfully (`Knit to HTML` in the `Knit` menu - `Cmd`+`Shift`+`K`), and your code passes linting (`Lint current file` command from the `Addins` menu - shortcut `Alt/Option`+`Shift`+`L`) without warnings, your assignment is ready for submission.
+
+```{r "tests", echo = FALSE, warning=FALSE, message=FALSE}
+library(testthat)
+library(glue)
+
+msg <- function(q, ...) glue("Problem with question {q}: ", ..., ".")
+
+expect_true(
+  exists("p2_1"),
+  info = msg("2.1", "'p2_1' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p3_1"),
+  info = msg("3.1", "'p3_1' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p4_2"),
+  info = msg("4.2", "'p4_2' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p4_4"),
+  info = msg("4.4", "'p4_4' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p4_6"),
+  info = msg("4.6", "'p4_6' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p4_7"),
+  info = msg("4.7", "'p4_7' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p5_1"),
+  info = msg("5.1", "'p5_1' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p5_2"),
+  info = msg("5.2", "'p5_2' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p5_4"),
+  info = msg("5.4", "'p5_4' plot object should exist but does not")
+)
+
+expect_true(
+  exists("p6_2"),
+  info = msg("6.2", "'p6_2' plot object should exist but does not")
+)
+```

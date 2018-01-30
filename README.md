@@ -34,3 +34,7 @@
 ## Resources
 
  - [ggplot2 cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+ - [R for Data Science](http://r4ds.had.co.nz/)
+ - [Fundamental of Data Visualization](http://serialmentor.com/dataviz/)
+ 
+
