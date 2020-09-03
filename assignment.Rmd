@@ -43,28 +43,6 @@ p2_1 <-
 p2_1
 ```
 
-
-# 3. Swirl course on ggplot2
-
-In the `swirl()` course menu, select **Exploratory Data Analysis**, complete the lesson **8: GGPlot2 Part2 ** (yes, part2, part1 is more about `qplot` which is not as powerful as `ggplot`). In part2, you can ignore the first question about `qplot` (the answer is `qplot(displ, hwy, data = mpg, geom = c("point", "smooth"), facets = .~drv)`). It is much more versatile to learn and use the full `ggplot` instead. Also one questions requests using a base plot function (which we have not covered and will omit in favor of ggplot) - the answer to this question is `plot(myx, myy, type = "l", ylim = c(-3,3))`. 
-
-```{r, eval=FALSE}
-install_course("Exploratory Data Analysis")
-swirl()
-```
-
-## 3.1 Now let's use the full power of ggplot to examine the `mpg` dataset
-
-> Reproduce the last plot generated in the swirl exercise. Remember that you'll first have to define the variable `g` in order to use it to build your plot (or build it completely from scratch without the `g` intermediate), and make sure to use proper space around infix operators (` = `, ` ~ `, etc.). Once again, store the final plot in a variable (`p3_1`).
-
-```{r, fig.width=10, fig.height=8}
-# store the plot in variable p3_1
-p3_1 <- 
-
-# render the plot by outputting the variable
-p3_1
-```
-
 # 4. [Aesthetic mapping](http://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings) and [data types](http://serialmentor.com/dataviz/visualizing-data-mapping-data-onto-aesthetics.html#aesthetics-and-types-of-data) in ggplot
 
 > Read the chapter on aesthetic mappings (chapter 3.3) in the R for Data Science book and the chapter on aesthetics and data types (chapter 1.1) in the the [Fundamental of Data Visualization](http://serialmentor.com/dataviz/) and answer the following questions adapted from R for Data Science.
@@ -258,11 +236,6 @@ msg <- function(q, ...) glue("Problem with question {q}: ", ..., ".")
 expect_true(
   exists("p2_1"),
   info = msg("2.1", "'p2_1' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p3_1"),
-  info = msg("3.1", "'p3_1' plot object should exist but does not")
 )
 
 expect_true(
