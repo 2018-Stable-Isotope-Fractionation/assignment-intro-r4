@@ -1,4 +1,4 @@
-# Getting started with R (Tutorial 4): Data Visualization
+# Getting started with R Data Visualization
 
 ## Setup
 
