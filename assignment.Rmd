@@ -15,7 +15,6 @@ editor_options:
 ```{r "setup", echo=FALSE, message=FALSE, warning=FALSE}
 # load all the libraries
 library(tidyverse)
-library(swirl)
 library(testthat)
 ```
 
@@ -225,56 +224,17 @@ ggplot() +
 
 # 7. Code checks
 
-> The following are automated tests for Travis. Run the chunk to see if your code is complete and passes all the tests. The chunk will stop at the first test that does not pass. If you get an error, see if you can figure out what might be missing in your code (do not edit this chunk!). Once all tests run without errors, the file knits successfully (`Knit to HTML` in the `Knit` menu - `Cmd`+`Shift`+`K`), and your code passes linting (`Lint current file` command from the `Addins` menu - shortcut `Alt/Option`+`Shift`+`L`) without warnings, your assignment is ready for submission.
+> The following are automated tests. Run the chunk to see if your code is complete and passes all the tests. The chunk will stop at the first test that does not pass. If you get an error, see if you can figure out what might be missing in your code (do not edit this chunk!). Once all tests run without errors, the file knits successfully (`Knit to HTML` in the `Knit` menu - `Cmd`+`Shift`+`K`), your assignment is ready for submission. Don't forget to lint the file too! (`Lint current file` command from the `Addins` menu - shortcut `Alt/Option`+`Shift`+`L`).
 
 ```{r "tests", echo = FALSE, warning=FALSE, message=FALSE}
 library(testthat)
-library(glue)
-
-msg <- function(q, ...) glue("Problem with question {q}: ", ..., ".")
-
-expect_true(
-  exists("p2_1"),
-  info = msg("2.1", "'p2_1' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p4_2"),
-  info = msg("4.2", "'p4_2' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p4_4"),
-  info = msg("4.4", "'p4_4' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p4_6"),
-  info = msg("4.6", "'p4_6' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p4_7"),
-  info = msg("4.7", "'p4_7' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p5_1"),
-  info = msg("5.1", "'p5_1' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p5_2"),
-  info = msg("5.2", "'p5_2' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p5_4"),
-  info = msg("5.4", "'p5_4' plot object should exist but does not")
-)
-
-expect_true(
-  exists("p6_2"),
-  info = msg("6.2", "'p6_2' plot object should exist but does not")
-)
+expect_true(ggplot2::is.ggplot(p2_1))
+expect_true(ggplot2::is.ggplot(p4_2))
+expect_true(ggplot2::is.ggplot(p4_4))
+expect_true(ggplot2::is.ggplot(p4_6))
+expect_true(ggplot2::is.ggplot(p4_7))
+expect_true(ggplot2::is.ggplot(p5_1))
+expect_true(ggplot2::is.ggplot(p5_2))
+expect_true(ggplot2::is.ggplot(p5_4))
+expect_true(ggplot2::is.ggplot(p6_2))
 ```
